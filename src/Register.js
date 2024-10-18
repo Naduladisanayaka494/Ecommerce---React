@@ -18,7 +18,7 @@ function Register() {
                 "Accept":'application/json'
             }
        })
-      result = await result.json()
+        result = await result.json()
         localStorage.setItem("user-info", JSON.stringify(result))
         navigate("/add");
     }
