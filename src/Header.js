@@ -2,9 +2,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link,useNavigate } from 'react-router-dom';
 
 function Header() {
+  let user = JSON.parse(localStorage.getItem('user-info'))
+  const navigate =useNavigate();
+  function logout() {
+    localStorage.clear()
+    navigate('/register')
+ }
   return (
+
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand href="#home">Ecommerce</Navbar.Brand>
@@ -25,8 +33,8 @@ function Header() {
             }
  
            
-            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown title= {user && user.name} id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
               </NavDropdown.Item>
@@ -35,7 +43,7 @@ function Header() {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown> */}
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
