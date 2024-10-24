@@ -7,6 +7,7 @@ import Register from './Register';
 import UpdateProduct from './UpdateProduct';
 import AddProduct from './AddProduct';
 import Protected from './protected';
+import ProductList from './ProductList';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/update" element={<Protected><UpdateProduct /></Protected>} />
           <Route path="/add" element={<Protected><AddProduct /></Protected>} />
+          <Route path="/" element={<Protected><ProductList /></Protected>} />
         </Routes>
       </BrowserRouter>
     </div>
