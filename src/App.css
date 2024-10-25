@@ -6,6 +6,15 @@
   height: 40vmin;
   pointer-events: none;
 }
+.delete{
+  background-color: #a90b0b;
+  color:#fff;
+  padding:5px;
+  border-radius:5px;
+  cursor:pointer
+
+
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
