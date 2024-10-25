@@ -1,4 +1,5 @@
 import Header from './Header';
+import {withRouter} from 'react-router-dom'
 function UpdateProduct() {
     return (
         <><Header />
@@ -8,4 +9,4 @@ function UpdateProduct() {
     )
 }
 
-export default UpdateProduct
+export default withRouter(UpdateProduct)

@@ -1,6 +1,7 @@
 import Header from "./Header";
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 function ProductList() {
     const [data, setData] = useState([]);
@@ -46,8 +47,14 @@ function ProductList() {
                             <td>{item.price}</td>
                             <td>{item.description}</td>
                             <td><img style={{ width: 100 }} src={"http://127.0.0.1:8000/" + item.file_path} /></td>
-                            <td><span onClick={()=>deleteOperation(item.id)} className="delete">Delete</span></td>
-                            {/* Adjust based on your data structure */}
+                            <td><span onClick={() => deleteOperation(item.id)} className="delete">Delete</span></td>
+                            <td>
+                                <Link to ={"update/"+item.id}>
+                                    <span className="update">Update</span>
+                                     </Link>
+                            </td>
+                               
+    
                         </tr>
                     ))}
                 </tbody>
